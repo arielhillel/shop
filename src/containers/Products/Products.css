@@ -1,0 +1,9 @@
+.product-card {
+  text-align: center;
+  padding: 50px;
+}
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+}

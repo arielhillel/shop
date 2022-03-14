@@ -1,0 +1,12 @@
+.product-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 75px;
+}
+.img-side {
+  text-align: center;
+}
+
+.info-side {
+  width: 72.5%;
+}

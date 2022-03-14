@@ -1,0 +1,11 @@
+.nav-bar-link {
+  font-size: 22px;
+  color: #1976d2;
+}
+.nav-bar-link:hover {
+  text-decoration: underline;
+}
+.nav-bar-list {
+  display: flex;
+  gap: 35px;
+}
