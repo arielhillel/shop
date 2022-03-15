@@ -9,7 +9,6 @@ const Loading = () => {
       <Box sx={{ width: "300%" }}>
         <LinearProgress />
       </Box>
-      ;
     </>
   );
 };

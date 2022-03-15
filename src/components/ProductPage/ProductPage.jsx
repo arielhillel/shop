@@ -20,11 +20,11 @@ const ProductPage = ({ products, addToCart }) => {
           </h2>
           <h2>Price:&nbsp;&nbsp; $ {products[id - 1].price}</h2>
           <p style={{ fontSize: "22px" }}>
-            Rate:&nbsp;&nbsp;
+            Quantity:&nbsp;&nbsp;
             {products[id - 1].rating.count}
           </p>
           <p style={{ fontSize: "22px" }}>
-            Quantity:&nbsp;&nbsp;
+            Rate:&nbsp;&nbsp;
             {products[id - 1].rating.rate}
           </p>
           <button

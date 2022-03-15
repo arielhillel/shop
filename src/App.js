@@ -62,6 +62,7 @@ function App() {
           path="/cart"
           element={
             <CartPage
+              products={products}
               addToCart={addToCart}
               removebgFromCart={removebgFromCart}
               cart={cart}
