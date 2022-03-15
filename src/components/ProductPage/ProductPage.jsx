@@ -3,7 +3,7 @@ import React from "react";
 import Loading from "../Loading/Loading";
 import "./ProductPage.css";
 
-const ProductPage = ({ products }) => {
+const ProductPage = ({ products, addToCart }) => {
   let { id } = useParams();
   return (
     <>
@@ -29,7 +29,7 @@ const ProductPage = ({ products }) => {
           </p>
           <button
             onClick={() => {
-              console.log(products[id - 1].id);
+              addToCart(products[id - 1].id);
             }}
           >
             Add To Cart

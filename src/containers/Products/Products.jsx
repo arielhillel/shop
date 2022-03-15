@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
 import "./Products.css";
 
-const Products = ({ products }) => {
+const Products = ({ products, addToCart }) => {
   return (
     <div className="products">
       {products ? (
@@ -16,7 +16,14 @@ const Products = ({ products }) => {
               <h1 className="product-title">{e.title}</h1>
               <h3>$ {e.price}</h3>
               <h3>{e.category}</h3>
-              <button>Add To Cart</button>
+              <button
+                onClick={() => {
+                  addToCart(e.id);
+                  console.log("שלב 1");
+                }}
+              >
+                Add To Cart
+              </button>
             </div>
           );
         })
