@@ -19,7 +19,6 @@ const Products = ({ products, addToCart }) => {
               <button
                 onClick={() => {
                   addToCart(e.id);
-                  console.log("שלב 1");
                 }}
               >
                 Add To Cart

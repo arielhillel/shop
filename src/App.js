@@ -20,21 +20,18 @@ function App() {
   }, []);
 
   const addToCart = (itemId) => {
-    console.log(itemId);
     let x = cart;
     x.push(itemId);
     setCart(x);
-    console.log(cart);
   };
 
   const removebgFromCart = (itemId) => {
     let arr = cart.filter((id) => id !== itemId);
-    console.log(arr);
     setCart(arr);
   };
 
   return (
-    <>
+    <div className="App">
       <Header />
       <Routes>
         {products ? (
@@ -72,7 +69,7 @@ function App() {
         <Route path="/contact" element={<Contact />}></Route>
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 

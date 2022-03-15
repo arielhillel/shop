@@ -1,0 +1,24 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartItem{
+    width: 55vw;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 1fr;
+    margin: 25px;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.img{
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    gap: 10px;
+    text-align: center;
+}
