@@ -11,7 +11,7 @@ const Products = ({ products, addToCart }) => {
           return (
             <div key={e.id} className="product-card">
               <Link to={"/Products/" + e.id}>
-                <img src={e.image} height={250} />
+                <img src={e.image} height={200} />
               </Link>
               <h1 className="product-title">{e.title}</h1>
               <h3>$ {e.price}</h3>
