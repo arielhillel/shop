@@ -1,11 +1,17 @@
 import "./CartPage.css";
 import React from "react";
+import { addProduct, removeProduct } from "../../reducers/reducerCartArr";
+import { useDispatch, useSelector } from "react-redux";
 
-const CartPage = ({ products, cart, addToCart, removebgFromCart }) => {
+const CartPage = () => {
+  let products = useSelector((s) => s.products);
+  let cart = useSelector((s) => s.cartArr);
+  const dispatchNow = useDispatch();
   return (
     <div className="wrapper">
       <div className="cartItems">
         {cart ? (
+          (console.log(cart),
           cart.map((e) => {
             return (
               <>
@@ -24,7 +30,7 @@ const CartPage = ({ products, cart, addToCart, removebgFromCart }) => {
                   <div className="buttons">
                     <button
                       onClick={() => {
-                        removebgFromCart(e);
+                        dispatchNow(removeProduct(e));
                       }}
                     >
                       -
@@ -33,7 +39,7 @@ const CartPage = ({ products, cart, addToCart, removebgFromCart }) => {
                 </div>
               </>
             );
-          })
+          }))
         ) : (
           <h1>אין כלום</h1>
         )}

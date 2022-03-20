@@ -2,8 +2,13 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
 import "./Products.css";
+import { addProduct, removeProduct } from "../../reducers/reducerCartArr";
+import { useDispatch, useSelector } from "react-redux";
 
-const Products = ({ products, addToCart }) => {
+const Products = ({ addToCart }) => {
+  let products = useSelector((s) => s.products);
+  let cartArr = useSelector((s) => s.cartArr);
+  const dispatchNow = useDispatch();
   return (
     <div className="products">
       {products ? (
@@ -18,7 +23,8 @@ const Products = ({ products, addToCart }) => {
               <h3>{e.category}</h3>
               <button
                 onClick={() => {
-                  addToCart(e.id);
+                  dispatchNow(addProduct(e.id));
+                  console.log(cartArr);
                 }}
               >
                 Add To Cart

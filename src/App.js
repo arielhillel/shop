@@ -7,17 +7,21 @@ import Products from "./containers/Products/Products";
 import CartPage from "./containers/CartPage/CartPage";
 import Contact from "./containers/Contact/Contact";
 import ProductPage from "./components/ProductPage/ProductPage";
+import { useDispatch, useSelector } from "react-redux";
+import { LoadProducts } from "./reducers/reducerProducts";
 import "./App.css";
 
 function App() {
-  const [products, setProducts] = useState();
   const [cart, setCart] = useState([]);
+  const dispatchNow = useDispatch();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-      .then((json) => setProducts(json));
+      .then((json) => dispatchNow(LoadProducts(json)));
   }, []);
+
+  let products = useSelector((s) => s.products);
 
   const addToCart = (itemId) => {
     let x = cart;
@@ -40,9 +44,7 @@ function App() {
               <Route
                 key={e.id}
                 path="/products/:id"
-                element={
-                  <ProductPage addToCart={addToCart} products={products} />
-                }
+                element={<ProductPage addToCart={addToCart} />}
               ></Route>
             );
           })
@@ -53,13 +55,12 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route
           path="/products"
-          element={<Products addToCart={addToCart} products={products} />}
+          element={<Products addToCart={addToCart} />}
         ></Route>
         <Route
           path="/cart"
           element={
             <CartPage
-              products={products}
               addToCart={addToCart}
               removebgFromCart={removebgFromCart}
               cart={cart}

@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import React from "react";
-import Loading from "../Loading/Loading";
 import "./ProductPage.css";
+import { useSelector } from "react-redux";
 
-const ProductPage = ({ products, addToCart }) => {
+const ProductPage = ({ addToCart }) => {
   let { id } = useParams();
+  let products = useSelector((s) => s.products);
+
   return (
     <>
       <div className="product-page">
