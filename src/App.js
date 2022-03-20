@@ -8,7 +8,7 @@ import CartPage from "./containers/CartPage/CartPage";
 import Contact from "./containers/Contact/Contact";
 import ProductPage from "./components/ProductPage/ProductPage";
 import { useDispatch, useSelector } from "react-redux";
-import { LoadProducts } from "./reducers/reducerProducts";
+import { LoadProducts } from "./redux/reducers/Products/products-reducer";
 import "./App.css";
 
 function App() {

@@ -5,12 +5,8 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import allReducers from "./reducers/reducer";
-
-const store = createStore(
-  allReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+import allReducers from "./redux/rootReducer";
+import store from "./redux/store";
 
 ReactDOM.render(
   <Provider store={store}>

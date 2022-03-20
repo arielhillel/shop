@@ -1,5 +1,5 @@
-import { reducerCartArr } from "./reducerCartArr";
-import { reducerProducts } from "./reducerProducts";
+import { reducerCartArr } from "./reducers/reducerCartArr";
+import { reducerProducts } from "./reducers/Products/products-reducer";
 import { combineReducers } from "redux";
 
 const allReducers = combineReducers({

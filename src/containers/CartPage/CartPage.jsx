@@ -1,6 +1,6 @@
 import "./CartPage.css";
 import React from "react";
-import { addProduct, removeProduct } from "../../reducers/reducerCartArr";
+import { addProduct, removeProduct } from "../../redux/reducers/reducerCartArr";
 import { useDispatch, useSelector } from "react-redux";
 
 const CartPage = () => {

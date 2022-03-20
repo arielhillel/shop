@@ -2,7 +2,7 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
 import "./Products.css";
-import { addProduct, removeProduct } from "../../reducers/reducerCartArr";
+import { addProduct, removeProduct } from "../../redux/reducers/reducerCartArr";
 import { useDispatch, useSelector } from "react-redux";
 
 const Products = ({ addToCart }) => {
